@@ -23,7 +23,7 @@ public class Viewer {
     
     private Text[] pTexts = new Text[2];
     private Text[] pScores = new Text[2];
-    private Text[][] pActions = new Text[2][5];
+    private Text[][] pActions = new Text[2][4];
     
     private List<String> actions0 = new ArrayList<>();
     private List<String> actions1 = new ArrayList<>();
@@ -80,20 +80,26 @@ public class Viewer {
             }
         }
         
+        graphicEntityModule.createRectangle().setX(30).setY(30).setWidth(400).setHeight(140).setFillColor(0x222222).setLineColor(0xcc0000).setLineWidth(4);
         Player p0 = gameManager.getPlayer(0);
         graphicEntityModule.createSprite().setImage(p0.getAvatarToken()).setX(50).setY(50).setBaseHeight(100).setBaseWidth(100).setAnchor(0);
         pTexts[0] = graphicEntityModule.createText(p0.getNicknameToken()).setX(170).setY(60).setFontSize(40).setFillColor(0xffffff);
         pScores[0] = graphicEntityModule.createText("Pieces: 30").setX(170).setY(110).setFontSize(30).setFillColor(0xdddddd);
         
+        graphicEntityModule.createRectangle().setX(1490).setY(30).setWidth(400).setHeight(140).setFillColor(0x222222).setLineColor(0x0066cc).setLineWidth(4);
         Player p1 = gameManager.getPlayer(1);
         graphicEntityModule.createSprite().setImage(p1.getAvatarToken()).setX(1870).setY(50).setBaseHeight(100).setBaseWidth(100).setAnchorX(1);
         pTexts[1] = graphicEntityModule.createText(p1.getNicknameToken()).setX(1750).setY(60).setFontSize(40).setFillColor(0xffffff).setAnchorX(1);
         pScores[1] = graphicEntityModule.createText("Pieces: 30").setX(1750).setY(110).setFontSize(30).setFillColor(0xdddddd).setAnchorX(1);
 
-        for (int i = 0; i < 5; i++) {
-            pActions[0][i] = graphicEntityModule.createText("").setX(50).setY(170 + i * 30).setFontSize(25).setFillColor(0xffffff);
-            pActions[1][i] = graphicEntityModule.createText("").setX(1870).setY(170 + i * 30).setFontSize(25).setFillColor(0xffffff).setAnchorX(1);
+        for (int i = 0; i < 4; i++) {
+            pActions[0][i] = graphicEntityModule.createText("").setX(50).setY(200 + i * 30).setFontSize(25).setFillColor(0xffffff).setZIndex(2);
+            pActions[1][i] = graphicEntityModule.createText("").setX(1870).setY(200 + i * 30).setFontSize(25).setFillColor(0xffffff).setAnchorX(1).setZIndex(2);
         }
+
+        // Action Frames
+        graphicEntityModule.createRectangle().setX(30).setY(180).setWidth(280).setHeight(140).setFillColor(0x222222).setLineColor(0xcc0000).setLineWidth(4).setZIndex(1);
+        graphicEntityModule.createRectangle().setX(1610).setY(180).setWidth(280).setHeight(140).setFillColor(0x222222).setLineColor(0x0066cc).setLineWidth(4).setZIndex(1);
 
         for (Map.Entry<Hex, Stack> entry : board.grid.entrySet()) {
             Hex hex = entry.getKey();
@@ -197,9 +203,9 @@ public class Viewer {
     public void addAction(int playerIndex, String action) {
         List<String> list = playerIndex == 0 ? actions0 : actions1;
         list.add(action);
-        if (list.size() > 5) list.remove(0);
+        if (list.size() > 4) list.remove(0);
         
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             if (i < list.size()) {
                 pActions[playerIndex][i].setText(list.get(i));
                 // Make the newest fully opaque, older ones fade out

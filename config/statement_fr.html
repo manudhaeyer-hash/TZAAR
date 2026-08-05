@@ -32,6 +32,224 @@
         <br>
         <b>Coordonnées :</b><br>
         Le plateau utilise un système de coordonnées <var>(X, Y)</var> allant de <const>0</const> à <const>8</const>. L'axe <var>X</var> représente la diagonale allant de haut-gauche à bas-droite, et l'axe <var>Y</var> représente les lignes horizontales de haut en bas. La case la plus à gauche est située en <var>(0, 4)</var>, et les cases tout en haut sont sur la ligne <var>Y = 0</var> et vont de <var>X = 4</var> à <var>X = 8</var>.<br>
+        <details><summary>Afficher la configuration initiale</summary>
+        <div style="text-align: center;">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" style="max-width: 100%; height: auto;">
+<polygon points="400.00,270.00 400.00,310.00 365.36,330.00 330.72,310.00 330.72,270.00 365.36,250.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="469.28,270.00 469.28,310.00 434.64,330.00 400.00,310.00 400.00,270.00 434.64,250.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="503.92,330.00 503.92,370.00 469.28,390.00 434.64,370.00 434.64,330.00 469.28,310.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="469.28,390.00 469.28,430.00 434.64,450.00 400.00,430.00 400.00,390.00 434.64,370.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="400.00,390.00 400.00,430.00 365.36,450.00 330.72,430.00 330.72,390.00 365.36,370.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="365.36,330.00 365.36,370.00 330.72,390.00 296.08,370.00 296.08,330.00 330.72,310.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="365.36,210.00 365.36,250.00 330.72,270.00 296.08,250.00 296.08,210.00 330.72,190.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="434.64,210.00 434.64,250.00 400.00,270.00 365.36,250.00 365.36,210.00 400.00,190.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="503.92,210.00 503.92,250.00 469.28,270.00 434.64,250.00 434.64,210.00 469.28,190.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="538.56,270.00 538.56,310.00 503.92,330.00 469.28,310.00 469.28,270.00 503.92,250.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="573.21,330.00 573.21,370.00 538.56,390.00 503.92,370.00 503.92,330.00 538.56,310.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="538.56,390.00 538.56,430.00 503.92,450.00 469.28,430.00 469.28,390.00 503.92,370.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="503.92,450.00 503.92,490.00 469.28,510.00 434.64,490.00 434.64,450.00 469.28,430.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="434.64,450.00 434.64,490.00 400.00,510.00 365.36,490.00 365.36,450.00 400.00,430.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="365.36,450.00 365.36,490.00 330.72,510.00 296.08,490.00 296.08,450.00 330.72,430.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="330.72,390.00 330.72,430.00 296.08,450.00 261.44,430.00 261.44,390.00 296.08,370.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="296.08,330.00 296.08,370.00 261.44,390.00 226.79,370.00 226.79,330.00 261.44,310.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="330.72,270.00 330.72,310.00 296.08,330.00 261.44,310.00 261.44,270.00 296.08,250.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="330.72,150.00 330.72,190.00 296.08,210.00 261.44,190.00 261.44,150.00 296.08,130.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="400.00,150.00 400.00,190.00 365.36,210.00 330.72,190.00 330.72,150.00 365.36,130.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="469.28,150.00 469.28,190.00 434.64,210.00 400.00,190.00 400.00,150.00 434.64,130.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="538.56,150.00 538.56,190.00 503.92,210.00 469.28,190.00 469.28,150.00 503.92,130.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="573.21,210.00 573.21,250.00 538.56,270.00 503.92,250.00 503.92,210.00 538.56,190.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="607.85,270.00 607.85,310.00 573.21,330.00 538.56,310.00 538.56,270.00 573.21,250.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="642.49,330.00 642.49,370.00 607.85,390.00 573.21,370.00 573.21,330.00 607.85,310.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="607.85,390.00 607.85,430.00 573.21,450.00 538.56,430.00 538.56,390.00 573.21,370.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="573.21,450.00 573.21,490.00 538.56,510.00 503.92,490.00 503.92,450.00 538.56,430.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="538.56,510.00 538.56,550.00 503.92,570.00 469.28,550.00 469.28,510.00 503.92,490.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="469.28,510.00 469.28,550.00 434.64,570.00 400.00,550.00 400.00,510.00 434.64,490.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="400.00,510.00 400.00,550.00 365.36,570.00 330.72,550.00 330.72,510.00 365.36,490.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="330.72,510.00 330.72,550.00 296.08,570.00 261.44,550.00 261.44,510.00 296.08,490.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="296.08,450.00 296.08,490.00 261.44,510.00 226.79,490.00 226.79,450.00 261.44,430.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="261.44,390.00 261.44,430.00 226.79,450.00 192.15,430.00 192.15,390.00 226.79,370.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="226.79,330.00 226.79,370.00 192.15,390.00 157.51,370.00 157.51,330.00 192.15,310.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="261.44,270.00 261.44,310.00 226.79,330.00 192.15,310.00 192.15,270.00 226.79,250.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="296.08,210.00 296.08,250.00 261.44,270.00 226.79,250.00 226.79,210.00 261.44,190.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="296.08,90.00 296.08,130.00 261.44,150.00 226.79,130.00 226.79,90.00 261.44,70.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="365.36,90.00 365.36,130.00 330.72,150.00 296.08,130.00 296.08,90.00 330.72,70.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="434.64,90.00 434.64,130.00 400.00,150.00 365.36,130.00 365.36,90.00 400.00,70.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="503.92,90.00 503.92,130.00 469.28,150.00 434.64,130.00 434.64,90.00 469.28,70.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="573.21,90.00 573.21,130.00 538.56,150.00 503.92,130.00 503.92,90.00 538.56,70.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="607.85,150.00 607.85,190.00 573.21,210.00 538.56,190.00 538.56,150.00 573.21,130.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="642.49,210.00 642.49,250.00 607.85,270.00 573.21,250.00 573.21,210.00 607.85,190.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="677.13,270.00 677.13,310.00 642.49,330.00 607.85,310.00 607.85,270.00 642.49,250.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="711.77,330.00 711.77,370.00 677.13,390.00 642.49,370.00 642.49,330.00 677.13,310.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="677.13,390.00 677.13,430.00 642.49,450.00 607.85,430.00 607.85,390.00 642.49,370.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="642.49,450.00 642.49,490.00 607.85,510.00 573.21,490.00 573.21,450.00 607.85,430.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="607.85,510.00 607.85,550.00 573.21,570.00 538.56,550.00 538.56,510.00 573.21,490.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="573.21,570.00 573.21,610.00 538.56,630.00 503.92,610.00 503.92,570.00 538.56,550.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="503.92,570.00 503.92,610.00 469.28,630.00 434.64,610.00 434.64,570.00 469.28,550.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="434.64,570.00 434.64,610.00 400.00,630.00 365.36,610.00 365.36,570.00 400.00,550.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="365.36,570.00 365.36,610.00 330.72,630.00 296.08,610.00 296.08,570.00 330.72,550.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="296.08,570.00 296.08,610.00 261.44,630.00 226.79,610.00 226.79,570.00 261.44,550.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="261.44,510.00 261.44,550.00 226.79,570.00 192.15,550.00 192.15,510.00 226.79,490.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="226.79,450.00 226.79,490.00 192.15,510.00 157.51,490.00 157.51,450.00 192.15,430.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="192.15,390.00 192.15,430.00 157.51,450.00 122.87,430.00 122.87,390.00 157.51,370.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="157.51,330.00 157.51,370.00 122.87,390.00 88.23,370.00 88.23,330.00 122.87,310.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="192.15,270.00 192.15,310.00 157.51,330.00 122.87,310.00 122.87,270.00 157.51,250.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="226.79,210.00 226.79,250.00 192.15,270.00 157.51,250.00 157.51,210.00 192.15,190.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<polygon points="261.44,150.00 261.44,190.00 226.79,210.00 192.15,190.00 192.15,150.00 226.79,130.00 " fill="#333333" stroke="#555555" stroke-width="2" />
+<text x="365.36" y="264.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">4,3</text>
+<text x="434.64" y="264.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">5,3</text>
+<text x="469.28" y="324.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">5,4</text>
+<text x="434.64" y="384.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">4,5</text>
+<text x="365.36" y="384.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">3,5</text>
+<text x="330.72" y="324.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">3,4</text>
+<text x="330.72" y="204.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">4,2</text>
+<text x="400.00" y="204.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">5,2</text>
+<text x="469.28" y="204.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">6,2</text>
+<text x="503.92" y="264.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">6,3</text>
+<text x="538.56" y="324.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">6,4</text>
+<text x="503.92" y="384.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">5,5</text>
+<text x="469.28" y="444.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">4,6</text>
+<text x="400.00" y="444.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">3,6</text>
+<text x="330.72" y="444.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">2,6</text>
+<text x="296.08" y="384.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">2,5</text>
+<text x="261.44" y="324.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">2,4</text>
+<text x="296.08" y="264.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">3,3</text>
+<text x="296.08" y="144.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">4,1</text>
+<text x="365.36" y="144.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">5,1</text>
+<text x="434.64" y="144.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">6,1</text>
+<text x="503.92" y="144.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">7,1</text>
+<text x="538.56" y="204.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">7,2</text>
+<text x="573.21" y="264.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">7,3</text>
+<text x="607.85" y="324.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">7,4</text>
+<text x="573.21" y="384.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">6,5</text>
+<text x="538.56" y="444.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">5,6</text>
+<text x="503.92" y="504.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">4,7</text>
+<text x="434.64" y="504.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">3,7</text>
+<text x="365.36" y="504.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">2,7</text>
+<text x="296.08" y="504.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">1,7</text>
+<text x="261.44" y="444.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">1,6</text>
+<text x="226.79" y="384.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">1,5</text>
+<text x="192.15" y="324.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">1,4</text>
+<text x="226.79" y="264.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">2,3</text>
+<text x="261.44" y="204.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">3,2</text>
+<text x="261.44" y="84.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">4,0</text>
+<text x="330.72" y="84.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">5,0</text>
+<text x="400.00" y="84.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">6,0</text>
+<text x="469.28" y="84.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">7,0</text>
+<text x="538.56" y="84.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">8,0</text>
+<text x="573.21" y="144.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">8,1</text>
+<text x="607.85" y="204.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">8,2</text>
+<text x="642.49" y="264.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">8,3</text>
+<text x="677.13" y="324.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">8,4</text>
+<text x="642.49" y="384.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">7,5</text>
+<text x="607.85" y="444.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">6,6</text>
+<text x="573.21" y="504.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">5,7</text>
+<text x="538.56" y="564.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">4,8</text>
+<text x="469.28" y="564.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">3,8</text>
+<text x="400.00" y="564.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">2,8</text>
+<text x="330.72" y="564.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">1,8</text>
+<text x="261.44" y="564.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">0,8</text>
+<text x="226.79" y="504.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">0,7</text>
+<text x="192.15" y="444.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">0,6</text>
+<text x="157.51" y="384.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">0,5</text>
+<text x="122.87" y="324.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">0,4</text>
+<text x="157.51" y="264.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">1,3</text>
+<text x="192.15" y="204.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">2,2</text>
+<text x="226.79" y="144.00" font-family="Arial" font-size="14" fill="#bbbbbb" text-anchor="middle">3,1</text>
+<circle cx="365.36" cy="290.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="434.64" cy="290.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="469.28" cy="350.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="434.64" cy="410.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="365.36" cy="410.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="330.72" cy="350.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="330.72" cy="230.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="330.72" cy="230.00" r="6.00" fill="#ffffff" />
+<circle cx="400.00" cy="230.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="400.00" cy="230.00" r="6.00" fill="#ffffff" />
+<circle cx="469.28" cy="230.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="469.28" cy="230.00" r="6.00" fill="#ffffff" />
+<circle cx="503.92" cy="290.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="503.92" cy="290.00" r="6.00" fill="#ffffff" />
+<circle cx="538.56" cy="350.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="538.56" cy="350.00" r="6.00" fill="#ffffff" />
+<circle cx="503.92" cy="410.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="503.92" cy="410.00" r="6.00" fill="#ffffff" />
+<circle cx="469.28" cy="470.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="469.28" cy="470.00" r="6.00" fill="#ffffff" />
+<circle cx="400.00" cy="470.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="400.00" cy="470.00" r="6.00" fill="#ffffff" />
+<circle cx="330.72" cy="470.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="330.72" cy="470.00" r="6.00" fill="#ffffff" />
+<circle cx="296.08" cy="410.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="296.08" cy="410.00" r="6.00" fill="#ffffff" />
+<circle cx="261.44" cy="350.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="261.44" cy="350.00" r="6.00" fill="#ffffff" />
+<circle cx="296.08" cy="290.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="296.08" cy="290.00" r="6.00" fill="#ffffff" />
+<circle cx="296.08" cy="170.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="296.08" cy="170.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="365.36" cy="170.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="365.36" cy="170.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="434.64" cy="170.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="434.64" cy="170.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="503.92" cy="170.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="503.92" cy="170.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="538.56" cy="230.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="538.56" cy="230.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="573.21" cy="290.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="573.21" cy="290.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="607.85" cy="350.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="607.85" cy="350.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="573.21" cy="410.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="573.21" cy="410.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="538.56" cy="470.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="538.56" cy="470.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="503.92" cy="530.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="503.92" cy="530.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="434.64" cy="530.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="434.64" cy="530.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="365.36" cy="530.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="365.36" cy="530.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="296.08" cy="530.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="296.08" cy="530.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="261.44" cy="470.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="261.44" cy="470.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="226.79" cy="410.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="226.79" cy="410.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="192.15" cy="350.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="192.15" cy="350.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="226.79" cy="290.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="226.79" cy="290.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="261.44" cy="230.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="261.44" cy="230.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="261.44" cy="110.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="330.72" cy="110.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="400.00" cy="110.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="469.28" cy="110.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="538.56" cy="110.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="573.21" cy="170.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="607.85" cy="230.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="642.49" cy="290.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="677.13" cy="350.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="642.49" cy="410.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="607.85" cy="470.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="573.21" cy="530.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="538.56" cy="590.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="469.28" cy="590.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="400.00" cy="590.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="330.72" cy="590.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="261.44" cy="590.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="226.79" cy="530.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="192.15" cy="470.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="157.51" cy="410.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
+<circle cx="122.87" cy="350.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="157.51" cy="290.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="192.15" cy="230.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+<circle cx="226.79" cy="170.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
+</svg>
+
+        </div>
+        </details>
         <br>
         <b>Phases de jeu :</b><br>
         Votre code sera appelé <b>deux fois</b> de suite lors de votre tour de jeu, correspondant aux deux phases :<br>

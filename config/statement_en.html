@@ -27,7 +27,7 @@
         Your code will be called <b>twice</b> in a row during your turn, corresponding to the two phases:<br>
         - <b>Phase 1:</b> You <b>must capture</b> an opponent's piece. If you cannot, you lose.<br>
         - <b>Phase 2:</b> You can either <b>capture</b> another opponent's piece, <b>reinforce</b> one of your own pieces, or <b>pass</b> by outputting <action>WAIT</action>.<br>
-        <i>Note: At the very beginning of the game, Player <const>0</const> (Red) only plays once (they only play Phase 1).</i><br>
+        <i>Note: At the very beginning of the game, Player <const>0</const> (Red) only plays once (they only play <b>Phase 1</b>).</i><br>
         <br>
         <b>Movement & Capture:</b><br>
         Pieces move in straight lines across any number of empty spaces. They cannot jump over other pieces and cannot land on an empty space.<br>
@@ -44,7 +44,7 @@
           <div class="text">
               <ul class="statement-bottom-line-sm">
                   <li>You capture your opponent's last TZAAR, TZARRA, or TOTT.</li>
-                  <li>Your opponent cannot make a valid capture during Phase 1.</li>
+                  <li>Your opponent cannot make a valid capture during <b>Phase 1</b>.</li>
               </ul>
           </div>
       </div>
@@ -56,7 +56,7 @@
           <div class="text">
               <ul class="statement-bottom-line-sm">
                   <li>You lose all pieces of one type (TZAAR, TZARRA, or TOTT).</li>
-                  <li>You cannot make a valid capture during Phase 1.</li>
+                  <li>You cannot make a valid capture during <b>Phase 1</b>.</li>
                   <li>Your program does not provide a valid command in the given time limit.</li>
               </ul>
           </div>
@@ -104,7 +104,7 @@
     <div class="blk">
       <div class="title">Output</div>
       <div class="text">
-        A single line for your action: <action>MOVE x1 y1 x2 y2</action> to move from (x1, y1) to (x2, y2), or <action>WAIT</action> (only valid in phase 2).
+        A single line for your action: <action>MOVE x1 y1 x2 y2</action> to move from (x1, y1) to (x2, y2), or <action>WAIT</action> (only valid in <b>Phase 2</b>).
       </div>
     </div>
     <div class="blk">

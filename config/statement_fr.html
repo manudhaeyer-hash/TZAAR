@@ -27,7 +27,7 @@
         Votre code sera appelé <b>deux fois</b> de suite lors de votre tour de jeu, correspondant aux deux phases :<br>
         - <b>Phase 1 :</b> Vous <b>devez capturer</b> une pièce adverse. Si vous ne pouvez pas, vous perdez.<br>
         - <b>Phase 2 :</b> Vous <b>pouvez capturer</b> une autre pièce, <b>renforcer</b> une de vos piles, ou <b>passer</b> en renvoyant <action>WAIT</action>.<br>
-        <i>Note : Au tout début de la partie, le joueur <const>0</const> (rouge) ne joue qu'une seule fois (il joue uniquement la Phase 1).</i><br>
+        <i>Note : Au tout début de la partie, le joueur <const>0</const> (rouge) ne joue qu'une seule fois (il joue uniquement la <b>Phase 1</b>).</i><br>
         <br>
         <b>Mouvement et Capture :</b><br>
         Les pièces se déplacent en ligne droite au-dessus de cases vides. Elles ne peuvent pas sauter par-dessus une autre pièce ni atterrir sur une case vide.<br>
@@ -44,7 +44,7 @@
           <div class="text">
               <ul class="statement-bottom-line-sm">
                   <li>Vous capturez le dernier TZAAR, TZARRA ou TOTT de l'adversaire.</li>
-                  <li>Votre adversaire ne peut pas faire de capture valide lors de la Phase 1.</li>
+                  <li>Votre adversaire ne peut pas faire de capture valide lors de la <b>Phase 1</b>.</li>
               </ul>
           </div>
       </div>
@@ -56,7 +56,7 @@
           <div class="text">
               <ul class="statement-bottom-line-sm">
                   <li>Vous n'avez plus de pièces d'un des trois types (TZAAR, TZARRA, ou TOTT).</li>
-                  <li>Vous ne pouvez pas faire de capture valide lors de la Phase 1.</li>
+                  <li>Vous ne pouvez pas faire de capture valide lors de la <b>Phase 1</b>.</li>
                   <li>Votre programme ne renvoie pas une commande valide dans le temps imparti.</li>
               </ul>
           </div>
@@ -104,7 +104,7 @@
     <div class="blk">
       <div class="title">Sortie</div>
       <div class="text">
-        Une ligne pour votre action : <action>MOVE x1 y1 x2 y2</action> pour déplacer la pile de (x1, y1) vers (x2, y2), ou <action>WAIT</action> (valide seulement en phase 2).
+        Une ligne pour votre action : <action>MOVE x1 y1 x2 y2</action> pour déplacer la pile de (x1, y1) vers (x2, y2), ou <action>WAIT</action> (valide seulement en <b>Phase 2</b>).
       </div>
     </div>
     <div class="blk">

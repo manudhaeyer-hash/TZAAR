@@ -151,7 +151,8 @@ public class Referee extends AbstractReferee {
             player.message = "Invalid action";
             player.deactivate(player.getNicknameToken() + ": " + e.getMessage());
             player.setScore(-1);
-            gameManager.addToGameSummary(player.getNicknameToken() + " sent an invalid action.");
+            gameManager.addToGameSummary(player.getNicknameToken() + " sent an invalid action:");
+            gameManager.addToGameSummary(e.getMessage());
             gameManager.addToGameSummary(Player.getExpectedOutputFormat());
             gameManager.endGame();
             return;

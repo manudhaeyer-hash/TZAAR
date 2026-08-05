@@ -93,8 +93,8 @@ public class Viewer {
         pScores[1] = graphicEntityModule.createText("Pieces: 30").setX(1750).setY(110).setFontSize(30).setFillColor(0xdddddd).setAnchorX(1);
 
         for (int i = 0; i < 4; i++) {
-            pActions[0][i] = graphicEntityModule.createText("").setX(50).setY(190 + i * 30).setFontSize(25).setFillColor(0xffffff).setZIndex(2);
-            pActions[1][i] = graphicEntityModule.createText("").setX(1870).setY(190 + i * 30).setFontSize(25).setFillColor(0xffffff).setAnchorX(1).setZIndex(2);
+            pActions[0][i] = graphicEntityModule.createText("").setX(50).setY(190 + i * 40).setFontSize(32).setFillColor(0xffffff).setZIndex(2);
+            pActions[1][i] = graphicEntityModule.createText("").setX(1870).setY(190 + i * 40).setFontSize(32).setFillColor(0xffffff).setAnchorX(1).setZIndex(2);
         }
 
         for (Map.Entry<Hex, Stack> entry : board.grid.entrySet()) {

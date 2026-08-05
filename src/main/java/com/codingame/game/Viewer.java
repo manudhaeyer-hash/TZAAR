@@ -93,13 +93,9 @@ public class Viewer {
         pScores[1] = graphicEntityModule.createText("Pieces: 30").setX(1750).setY(110).setFontSize(30).setFillColor(0xdddddd).setAnchorX(1);
 
         for (int i = 0; i < 4; i++) {
-            pActions[0][i] = graphicEntityModule.createText("").setX(50).setY(925 + i * 30).setFontSize(25).setFillColor(0xffffff).setZIndex(2);
-            pActions[1][i] = graphicEntityModule.createText("").setX(1870).setY(925 + i * 30).setFontSize(25).setFillColor(0xffffff).setAnchorX(1).setZIndex(2);
+            pActions[0][i] = graphicEntityModule.createText("").setX(50).setY(190 + i * 30).setFontSize(25).setFillColor(0xffffff).setZIndex(2);
+            pActions[1][i] = graphicEntityModule.createText("").setX(1870).setY(190 + i * 30).setFontSize(25).setFillColor(0xffffff).setAnchorX(1).setZIndex(2);
         }
-
-        // Action Frames
-        graphicEntityModule.createRectangle().setX(30).setY(910).setWidth(400).setHeight(140).setFillColor(0x222222).setLineColor(0xcc0000).setLineWidth(4).setZIndex(1);
-        graphicEntityModule.createRectangle().setX(1490).setY(910).setWidth(400).setHeight(140).setFillColor(0x222222).setLineColor(0x0066cc).setLineWidth(4).setZIndex(1);
 
         for (Map.Entry<Hex, Stack> entry : board.grid.entrySet()) {
             Hex hex = entry.getKey();

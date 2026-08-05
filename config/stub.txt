@@ -1,0 +1,6 @@
+read myId:int
+gameloop
+read actionPhase:int
+read validPieceCount:int
+loop validPieceCount read q:int r:int owner:int type:int height:int
+write WAIT

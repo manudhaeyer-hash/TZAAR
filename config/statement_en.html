@@ -1,0 +1,117 @@
+<div class="statement-body">
+  <div class="statement-section statement-goal">
+    <h2>
+      <span class="icon icon-goal">&nbsp;</span>
+      <span>Goal</span>
+    </h2>
+    <div class="statement-goal-content">
+      Win the game by eliminating all of your opponent's pieces of a specific type (TZAAR, TZARRA, or TOTT) or by making them unable to perform a valid capture on their turn.
+    </div>
+  </div>
+
+  <div class="statement-section statement-rules">
+    <h2>
+      <span class="icon icon-rules">&nbsp;</span>
+      <span>Rules</span>
+    </h2>
+    <div>
+      <div class="statement-rules-content">
+        This game is based on the official board game <a href="https://en.wikipedia.org/wiki/TZAAR" target="_blank">TZAAR</a>. There are no deviations from the official rules, except for the colors of the pieces (Red and Blue instead of White and Black).<br>
+        TZAAR is played on a hexagonal board with <const>60</const> spaces (4 rings around an empty center).<br>
+        Each player controls <const>30</const> pieces: <const>6</const> TZAARs, <const>9</const> TZARRAs, and <const>15</const> TOTTs.<br>
+        The game uses a <b>fixed</b> starting arrangement. Player <const>0</const> (Red) plays first.<br>
+        <br>
+        <b>Coordinates:</b> The board uses an <var>(X, Y)</var> coordinate system from <const>0</const> to <const>8</const>. The <var>X</var> axis represents the diagonal from top-left to bottom-right, and the <var>Y</var> axis represents the horizontal rows from top to bottom. The leftmost space on the board is at <var>(0, 4)</var>, and the topmost spaces are on the row <var>Y = 0</var> from <var>X = 4</var> to <var>X = 8</var>.<br>
+        <br>
+        <b>Game Phases:</b><br>
+        Your code will be called <b>twice</b> in a row during your turn, corresponding to the two phases:<br>
+        - <b>Phase 1:</b> You <b>must capture</b> an opponent's piece. If you cannot, you lose.<br>
+        - <b>Phase 2:</b> You can either <b>capture</b> another opponent's piece, <b>reinforce</b> one of your own pieces, or <b>pass</b> by outputting <action>WAIT</action>.<br>
+        <i>Note: At the very beginning of the game, Player <const>0</const> (Red) only plays once (they only play Phase 1).</i><br>
+        <br>
+        <b>Movement & Capture:</b><br>
+        Pieces move in straight lines across any number of empty spaces. They cannot jump over other pieces and cannot land on an empty space.<br>
+        When <b>capturing</b>, your stack must be of <b>equal or greater height</b> than the opponent's stack. The opponent's stack is then removed, and yours replaces it.<br>
+        When <b>reinforcing</b>, you move your stack onto another of your own stacks. The heights are added, and the top piece determines the type of the new stack.<br>
+      </div>
+    </div>
+  </div>
+
+  <div class="statement-victory-conditions">
+      <div class="icon victory"></div>
+      <div class="blk">
+          <div class="title">Victory Conditions</div>
+          <div class="text">
+              <ul class="statement-bottom-line-sm">
+                  <li>You capture your opponent's last TZAAR, TZARRA, or TOTT.</li>
+                  <li>Your opponent cannot make a valid capture during Phase 1.</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <div class="statement-lose-conditions">
+      <div class="icon lose"></div>
+      <div class="blk">
+          <div class="title">Defeat Conditions</div>
+          <div class="text">
+              <ul class="statement-bottom-line-sm">
+                  <li>You lose all pieces of one type (TZAAR, TZARRA, or TOTT).</li>
+                  <li>You cannot make a valid capture during Phase 1.</li>
+                  <li>Your program does not provide a valid command in the given time limit.</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <div class="statement-section statement-technical">
+      <div class="blk">
+          <div class="title">Technical Details</div>
+          <div class="text">
+              The source code of this game is available on <a href="https://github.com/manudhaeyer-hash/TZAAR" target="_blank">this GitHub repository</a>.
+          </div>
+      </div>
+  </div>
+
+  <div class="statement-section statement-protocol">
+    <h2>
+      <span class="icon icon-protocol">&nbsp;</span>
+      <span>Game Protocol</span>
+    </h2>
+    <div class="blk">
+      <div class="title">Initialization input</div>
+      <div class="text">
+        <b>Line 1:</b> An integer <var>myId</var> indicating your player ID (<const>0</const> or <const>1</const>).
+      </div>
+    </div>
+    <div class="blk">
+      <div class="title">Input for one game turn</div>
+      <div class="text">
+        <b>Line 1:</b> An integer <var>actionPhase</var> (<const>1</const> or <const>2</const>).<br>
+        <br>
+        <b>Line 2:</b> An integer <var>validPieceCount</var> the number of stacks on the board.<br>
+        <br>
+        Next <var>validPieceCount</var> lines: <const>5</const> space-separated integers: <var>x</var> <var>y</var> <var>owner</var> <var>type</var> <var>height</var>.<br>
+        <ul class="statement-bottom-line-sm">
+          <li><var>x</var>: X coordinate of the space</li>
+          <li><var>y</var>: Y coordinate of the space</li>
+          <li><var>owner</var>: owner of the stack (<const>0</const> or <const>1</const>)</li>
+          <li><var>type</var>: type of the top piece of the stack (<const>0</const> = TOTT, <const>1</const> = TZARRA, <const>2</const> = TZAAR)</li>
+          <li><var>height</var>: height of the stack</li>
+        </ul>
+      </div>
+    </div>
+    <div class="blk">
+      <div class="title">Output</div>
+      <div class="text">
+        A single line for your action: <action>MOVE x1 y1 x2 y2</action> to move from (x1, y1) to (x2, y2), or <action>WAIT</action> (only valid in phase 2).
+      </div>
+    </div>
+    <div class="blk">
+      <div class="title">Constraints</div>
+      <div class="text">
+        Response time for first turn ≤ <const>1000</const> ms<br>
+        Response time for one turn ≤ <const>50</const> ms<br>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.codingame.game</groupId>
+    <!-- TODO: renommez l'artifactId pour votre jeu -->
+    <artifactId>TZAAR</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <!-- Le SDK >= 4.5.0 est compilé pour Java 17 : il faut un JDK 17+.
+             ATTENTION : vérifiez que la version existe sur Maven Central
+             (4.2.2 par ex. n'a JAMAIS existé : 4.2.1 -> 4.3.0). -->
+        <maven.compiler.release>17</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <gamengine.version>4.7.8</gamengine.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.codingame.gameengine</groupId>
+            <artifactId>core</artifactId>
+            <version>${gamengine.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.codingame.gameengine</groupId>
+            <artifactId>module-entities</artifactId>
+            <version>${gamengine.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.codingame.gameengine</groupId>
+            <artifactId>module-endscreen</artifactId>
+            <version>${gamengine.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.codingame.gameengine</groupId>
+            <artifactId>module-tooltip</artifactId>
+            <version>${gamengine.version}</version>
+        </dependency>
+        <!-- runner SANS scope test : la plateforme CodinGame lance sa classe
+             Exporter depuis ce jar lors de l'import du projet. -->
+        <dependency>
+            <groupId>com.codingame.gameengine</groupId>
+            <artifactId>runner</artifactId>
+            <version>${gamengine.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!-- 3.8.1 crashe (AssertionError) avec les JDK récents -->
+                <version>3.13.0</version>
+                <configuration>
+                    <release>17</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

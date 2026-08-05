@@ -1,0 +1,117 @@
+<div class="statement-body">
+  <div class="statement-section statement-goal">
+    <h2>
+      <span class="icon icon-goal">&nbsp;</span>
+      <span>Objectif</span>
+    </h2>
+    <div class="statement-goal-content">
+      Gagnez la partie en éliminant toutes les pièces adverses d'un type spécifique (TZAAR, TZARRA ou TOTT) ou en bloquant votre adversaire pour qu'il ne puisse plus capturer.
+    </div>
+  </div>
+
+  <div class="statement-section statement-rules">
+    <h2>
+      <span class="icon icon-rules">&nbsp;</span>
+      <span>Règles</span>
+    </h2>
+    <div>
+      <div class="statement-rules-content">
+        Ce jeu est basé sur le jeu de plateau officiel <a href="https://en.wikipedia.org/wiki/TZAAR" target="_blank">TZAAR</a>. Il n'y a aucune déviation par rapport aux règles officielles, mis à part la couleur des pions (Rouge et Bleu au lieu de Blanc et Noir).<br>
+        TZAAR se joue sur un plateau hexagonal de <const>60</const> cases (4 anneaux autour d'un centre vide).<br>
+        Chaque joueur possède <const>30</const> pièces : <const>6</const> TZAARs, <const>9</const> TZARRAs, et <const>15</const> TOTTs.<br>
+        La disposition initiale est <b>fixe</b>. Le joueur <const>0</const> (rouge) commence.<br>
+        <br>
+        <b>Coordonnées :</b> Le plateau utilise un système de coordonnées <var>(X, Y)</var> allant de <const>0</const> à <const>8</const>. L'axe <var>X</var> représente la diagonale allant de haut-gauche à bas-droite, et l'axe <var>Y</var> représente les lignes horizontales de haut en bas. La case la plus à gauche est située en <var>(0, 4)</var>, et les cases tout en haut sont sur la ligne <var>Y = 0</var> et vont de <var>X = 4</var> à <var>X = 8</var>.<br>
+        <br>
+        <b>Phases de jeu :</b><br>
+        Votre code sera appelé <b>deux fois</b> de suite lors de votre tour de jeu, correspondant aux deux phases :<br>
+        - <b>Phase 1 :</b> Vous <b>devez capturer</b> une pièce adverse. Si vous ne pouvez pas, vous perdez.<br>
+        - <b>Phase 2 :</b> Vous <b>pouvez capturer</b> une autre pièce, <b>renforcer</b> une de vos piles, ou <b>passer</b> en renvoyant <action>WAIT</action>.<br>
+        <i>Note : Au tout début de la partie, le joueur <const>0</const> (rouge) ne joue qu'une seule fois (il joue uniquement la Phase 1).</i><br>
+        <br>
+        <b>Mouvement et Capture :</b><br>
+        Les pièces se déplacent en ligne droite au-dessus de cases vides. Elles ne peuvent pas sauter par-dessus une autre pièce ni atterrir sur une case vide.<br>
+        Pour <b>capturer</b>, la hauteur de votre pile doit être <b>supérieure ou égale</b> à celle de la cible. La pile de l'adversaire est ensuite retirée et la vôtre prend sa place.<br>
+        Pour <b>renforcer</b>, déplacez votre pile sur une autre de vos piles. Les hauteurs s'additionnent, et la pièce du sommet détermine le type de la nouvelle pile.<br>
+      </div>
+    </div>
+  </div>
+
+  <div class="statement-victory-conditions">
+      <div class="icon victory"></div>
+      <div class="blk">
+          <div class="title">Conditions de Victoire</div>
+          <div class="text">
+              <ul class="statement-bottom-line-sm">
+                  <li>Vous capturez le dernier TZAAR, TZARRA ou TOTT de l'adversaire.</li>
+                  <li>Votre adversaire ne peut pas faire de capture valide lors de la Phase 1.</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <div class="statement-lose-conditions">
+      <div class="icon lose"></div>
+      <div class="blk">
+          <div class="title">Conditions de Défaite</div>
+          <div class="text">
+              <ul class="statement-bottom-line-sm">
+                  <li>Vous n'avez plus de pièces d'un des trois types (TZAAR, TZARRA, ou TOTT).</li>
+                  <li>Vous ne pouvez pas faire de capture valide lors de la Phase 1.</li>
+                  <li>Votre programme ne renvoie pas une commande valide dans le temps imparti.</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <div class="statement-section statement-technical">
+      <div class="blk">
+          <div class="title">Détails techniques</div>
+          <div class="text">
+              Le code source de ce jeu est disponible sur <a href="https://github.com/manudhaeyer-hash/TZAAR" target="_blank">ce dépôt GitHub</a>.
+          </div>
+      </div>
+  </div>
+
+  <div class="statement-section statement-protocol">
+    <h2>
+      <span class="icon icon-protocol">&nbsp;</span>
+      <span>Protocole de jeu</span>
+    </h2>
+    <div class="blk">
+      <div class="title">Entrées d'initialisation</div>
+      <div class="text">
+        <b>Ligne 1 :</b> Un entier <var>myId</var> indiquant votre identifiant de joueur (<const>0</const> ou <const>1</const>).
+      </div>
+    </div>
+    <div class="blk">
+      <div class="title">Entrées pour un tour de jeu</div>
+      <div class="text">
+        <b>Ligne 1 :</b> Un entier <var>actionPhase</var> (<const>1</const> ou <const>2</const>).<br>
+        <br>
+        <b>Ligne 2 :</b> Un entier <var>validPieceCount</var> le nombre de piles sur le plateau.<br>
+        <br>
+        <var>validPieceCount</var> lignes suivantes : <const>5</const> entiers séparés par un espace : <var>x</var> <var>y</var> <var>owner</var> <var>type</var> <var>height</var>.<br>
+        <ul class="statement-bottom-line-sm">
+          <li><var>x</var> : coordonnée X de la case</li>
+          <li><var>y</var> : coordonnée Y de la case</li>
+          <li><var>owner</var> : propriétaire de la pile (<const>0</const> ou <const>1</const>)</li>
+          <li><var>type</var> : type de la pièce au sommet de la pile (<const>0</const> = TOTT, <const>1</const> = TZARRA, <const>2</const> = TZAAR)</li>
+          <li><var>height</var> : hauteur de la pile</li>
+        </ul>
+      </div>
+    </div>
+    <div class="blk">
+      <div class="title">Sortie</div>
+      <div class="text">
+        Une ligne pour votre action : <action>MOVE x1 y1 x2 y2</action> pour déplacer la pile de (x1, y1) vers (x2, y2), ou <action>WAIT</action> (valide seulement en phase 2).
+      </div>
+    </div>
+    <div class="blk">
+      <div class="title">Contraintes</div>
+      <div class="text">
+        Temps de réponse pour le premier tour ≤ <const>1000</const> ms<br>
+        Temps de réponse pour un tour ≤ <const>50</const> ms<br>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,10 @@ public class Player extends AbstractMultiplayerPlayer {
         return 1;
     }
 
-    public static String getExpectedOutputFormat() {
+    public static String getExpectedOutputFormat(int actionPhase) {
+        if (actionPhase == 1) {
+            return "Expected output format: 'MOVE q1 r1 q2 r2'";
+        }
         return "Expected output format: 'MOVE q1 r1 q2 r2' or 'WAIT'";
     }
 }

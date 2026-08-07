@@ -127,65 +127,65 @@
 <circle cx="365.36" cy="410.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
 <circle cx="330.72" cy="350.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
 <circle cx="330.72" cy="230.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="330.72" cy="230.00" r="6.00" fill="#ffffff" />
+<circle cx="330.72" cy="230.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
 <circle cx="400.00" cy="230.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="400.00" cy="230.00" r="6.00" fill="#ffffff" />
+<circle cx="400.00" cy="230.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
 <circle cx="469.28" cy="230.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="469.28" cy="230.00" r="6.00" fill="#ffffff" />
+<circle cx="469.28" cy="230.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
 <circle cx="503.92" cy="290.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="503.92" cy="290.00" r="6.00" fill="#ffffff" />
+<circle cx="503.92" cy="290.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
 <circle cx="538.56" cy="350.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="538.56" cy="350.00" r="6.00" fill="#ffffff" />
+<circle cx="538.56" cy="350.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
 <circle cx="503.92" cy="410.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="503.92" cy="410.00" r="6.00" fill="#ffffff" />
+<circle cx="503.92" cy="410.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
 <circle cx="469.28" cy="470.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="469.28" cy="470.00" r="6.00" fill="#ffffff" />
+<circle cx="469.28" cy="470.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
 <circle cx="400.00" cy="470.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="400.00" cy="470.00" r="6.00" fill="#ffffff" />
+<circle cx="400.00" cy="470.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
 <circle cx="330.72" cy="470.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="330.72" cy="470.00" r="6.00" fill="#ffffff" />
+<circle cx="330.72" cy="470.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
 <circle cx="296.08" cy="410.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="296.08" cy="410.00" r="6.00" fill="#ffffff" />
+<circle cx="296.08" cy="410.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
 <circle cx="261.44" cy="350.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="261.44" cy="350.00" r="6.00" fill="#ffffff" />
+<circle cx="261.44" cy="350.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
 <circle cx="296.08" cy="290.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="296.08" cy="290.00" r="6.00" fill="#ffffff" />
+<circle cx="296.08" cy="290.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
 <circle cx="296.08" cy="170.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="296.08" cy="170.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="296.08" cy="170.00" r="6.00" fill="#ffffff" />
 <circle cx="365.36" cy="170.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="365.36" cy="170.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="365.36" cy="170.00" r="6.00" fill="#ffffff" />
 <circle cx="434.64" cy="170.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="434.64" cy="170.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="434.64" cy="170.00" r="6.00" fill="#ffffff" />
 <circle cx="503.92" cy="170.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="503.92" cy="170.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="503.92" cy="170.00" r="6.00" fill="#ffffff" />
 <circle cx="538.56" cy="230.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="538.56" cy="230.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="538.56" cy="230.00" r="6.00" fill="#ffffff" />
 <circle cx="573.21" cy="290.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="573.21" cy="290.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="573.21" cy="290.00" r="6.00" fill="#ffffff" />
 <circle cx="607.85" cy="350.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="607.85" cy="350.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="607.85" cy="350.00" r="6.00" fill="#ffffff" />
 <circle cx="573.21" cy="410.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="573.21" cy="410.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="573.21" cy="410.00" r="6.00" fill="#ffffff" />
 <circle cx="538.56" cy="470.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="538.56" cy="470.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="538.56" cy="470.00" r="6.00" fill="#ffffff" />
 <circle cx="503.92" cy="530.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="503.92" cy="530.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="503.92" cy="530.00" r="6.00" fill="#ffffff" />
 <circle cx="434.64" cy="530.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="434.64" cy="530.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="434.64" cy="530.00" r="6.00" fill="#ffffff" />
 <circle cx="365.36" cy="530.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="365.36" cy="530.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="365.36" cy="530.00" r="6.00" fill="#ffffff" />
 <circle cx="296.08" cy="530.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="296.08" cy="530.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="296.08" cy="530.00" r="6.00" fill="#ffffff" />
 <circle cx="261.44" cy="470.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="261.44" cy="470.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="261.44" cy="470.00" r="6.00" fill="#ffffff" />
 <circle cx="226.79" cy="410.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
-<circle cx="226.79" cy="410.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="226.79" cy="410.00" r="6.00" fill="#ffffff" />
 <circle cx="192.15" cy="350.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="192.15" cy="350.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="192.15" cy="350.00" r="6.00" fill="#ffffff" />
 <circle cx="226.79" cy="290.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="226.79" cy="290.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="226.79" cy="290.00" r="6.00" fill="#ffffff" />
 <circle cx="261.44" cy="230.00" r="20.00" fill="#0066cc" stroke="#ffffff" stroke-width="2" />
-<circle cx="261.44" cy="230.00" r="10.00" fill="none" stroke="#ffffff" stroke-width="3" />
+<circle cx="261.44" cy="230.00" r="6.00" fill="#ffffff" />
 <circle cx="261.44" cy="110.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
 <circle cx="330.72" cy="110.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />
 <circle cx="400.00" cy="110.00" r="20.00" fill="#cc0000" stroke="#ffffff" stroke-width="2" />

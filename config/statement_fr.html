@@ -5,7 +5,7 @@
       <span>Le jeu</span>
     </h2>
     <div class="statement-game-content">
-      Ce jeu est basé sur le jeu de plateau <a href="https://en.wikipedia.org/wiki/TZAAR" target="_blank">TZAAR</a>, inventé par Kris Burm. Il n'y a aucune déviation par rapport aux règles officielles, mis à part la couleur des pions (Rouge et Bleu au lieu de Blanc et Noir).
+      Ce jeu est basé sur le jeu de plateau <a href="https://en.wikipedia.org/wiki/<i>tzaar</i>" target="_blank"><i>tzaar</i></a>, inventé par Kris Burm. Il n'y a aucune déviation par rapport aux règles officielles, mis à part la couleur des pions (Rouge et Bleu au lieu de Blanc et Noir).
     </div>
   </div>
 
@@ -15,7 +15,7 @@
       <span>Objectif</span>
     </h2>
     <div class="statement-goal-content">
-      Gagnez la partie en éliminant toutes les pièces adverses d'un type spécifique (TZAAR, TZARRA ou TOTT) ou en bloquant votre adversaire pour qu'il ne puisse plus capturer.
+      Gagnez la partie en éliminant toutes les pièces adverses d'un type spécifique (<i>tzaar</i>, <i>tzarra</i> ou <i>tott</i>) ou en bloquant votre adversaire pour qu'il ne puisse plus capturer.
     </div>
   </div>
 
@@ -26,12 +26,12 @@
     </h2>
     <div>
       <div class="statement-rules-content">
-        TZAAR se joue sur un plateau hexagonal de <const>60</const> cases (4 anneaux autour d'un centre vide).<br>
-        Chaque joueur possède <const>30</const> pièces : <const>6</const> TZAARs, <const>9</const> TZARRAs, et <const>15</const> TOTTs.<br>
+        <i>tzaar</i> se joue sur un plateau hexagonal de <const>60</const> cases (4 anneaux autour d'un centre vide).<br>
+        Chaque joueur possède <const>30</const> pièces : <const>6</const> <i>tzaar</i>s, <const>9</const> <i>tzarra</i>s, et <const>15</const> <i>tott</i>s.<br>
         La disposition initiale est <b>fixe</b>. Le joueur <const>0</const> (rouge) commence.<br>
         <br>
         <b>Coordonnées :</b><br>
-        Le plateau utilise un système de coordonnées <var>(X, Y)</var> allant de <const>0</const> à <const>8</const>. L'axe <var>X</var> représente la diagonale allant de haut-gauche à bas-droite, et l'axe <var>Y</var> représente les lignes horizontales de haut en bas. La case la plus à gauche est située en (<const>0</const>, <const>4</const>), et les cases tout en haut sont sur la ligne <var>Y</var> = <const>0</const> et vont de <var>X</var> = <const>4</const> à <var>X</var> = <const>8</const>.<br>
+        Le plateau utilise un système de coordonnées (<var>X</var>, <var>Y</var>) avec les deux coordonnées allant de <const>0</const> à <const>8</const>. Les coordonnées <var>X</var> augmentent de bas-gauche à haut-droite, et les coordonnées <var>Y</var> augmentent de haut en bas. Pour faciliter la lecture, les coordonnées de chaque case sont indiquées dans le schéma de configuration initiale ci-dessous.<br>
         <br>
         <details><summary>Afficher la configuration initiale</summary>
         <div style="text-align: center;">
@@ -61,7 +61,7 @@
           <div class="title">Conditions de Victoire</div>
           <div class="text">
               <ul class="statement-bottom-line-sm">
-                  <li>Vous capturez le dernier TZAAR, TZARRA ou TOTT de l'adversaire.</li>
+                  <li>Vous capturez le dernier <i>tzaar</i>, <i>tzarra</i> ou <i>tott</i> de l'adversaire.</li>
                   <li>Votre adversaire ne peut pas faire de capture valide lors de la <b>Phase 1</b>.</li>
               </ul>
           </div>
@@ -73,7 +73,7 @@
           <div class="title">Conditions de Défaite</div>
           <div class="text">
               <ul class="statement-bottom-line-sm">
-                  <li>Vous n'avez plus de pièces d'un des trois types (TZAAR, TZARRA, ou TOTT).</li>
+                  <li>Vous n'avez plus de pièces d'un des trois types (<i>tzaar</i>, <i>tzarra</i>, ou <i>tott</i>).</li>
                   <li>Vous ne pouvez pas faire de capture valide lors de la <b>Phase 1</b>.</li>
                   <li>Votre programme ne renvoie pas une commande valide dans le temps imparti.</li>
               </ul>
@@ -107,14 +107,14 @@
       <div class="text">
         <span class="statement-lineno">Ligne 1 :</span> Un entier <var>actionPhase</var> (<const>1</const> ou <const>2</const>).<br>
         <br>
-        <span class="statement-lineno">Ligne 2 :</span> Un entier <var>validPieceCount</var> le nombre de piles sur le plateau.<br>
+        <span class="statement-lineno">Ligne 2 :</span> Un entier <var>pieceCount</var> le nombre de piles sur le plateau.<br>
         <br>
-        <span class="statement-lineno">Les <var>validPieceCount</var> lignes suivantes :</span> <const>5</const> entiers séparés par un espace : <var>x</var> <var>y</var> <var>owner</var> <var>type</var> <var>height</var>.<br>
+        <span class="statement-lineno">Les <var>pieceCount</var> lignes suivantes :</span> <const>5</const> entiers séparés par un espace : <var>x</var> <var>y</var> <var>owner</var> <var>type</var> <var>height</var>.<br>
         <ul class="statement-bottom-line-sm">
           <li><var>x</var> : coordonnée X de la case</li>
           <li><var>y</var> : coordonnée Y de la case</li>
           <li><var>owner</var> : propriétaire de la pile (<const>0</const> ou <const>1</const>)</li>
-          <li><var>type</var> : type de la pièce au sommet de la pile (<const>0</const> = TOTT, <const>1</const> = TZARRA, <const>2</const> = TZAAR)</li>
+          <li><var>type</var> : type de la pièce au sommet de la pile (<const>0</const> = <i>tott</i>, <const>1</const> = <i>tzarra</i>, <const>2</const> = <i>tzaar</i>)</li>
           <li><var>height</var> : hauteur de la pile</li>
         </ul>
       </div>
@@ -122,7 +122,7 @@
     <div class="blk">
       <div class="title">Sortie</div>
       <div class="text">
-        Une ligne pour votre action : <action>MOVE x1 y1 x2 y2</action> pour déplacer la pile de (x1, y1) vers (x2, y2), ou <action>WAIT</action> (valide seulement en <b>Phase 2</b>).
+        Une ligne pour votre action : <action>MOVE <var>x1</var> <var>y1</var> <var>x2</var> <var>y2</var></action> pour déplacer la pile de (x1, y1) vers (x2, y2), ou <action>WAIT</action> (valide seulement en <b>Phase 2</b>).
       </div>
     </div>
     <div class="blk">

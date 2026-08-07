@@ -1,9 +1,9 @@
 package com.codingame.game;
 
 public enum PieceType {
-    TOTT(0),
+    TZAAR(0),
     TZARRA(1),
-    TZAAR(2);
+    TOTT(2);
 
     public final int id;
 

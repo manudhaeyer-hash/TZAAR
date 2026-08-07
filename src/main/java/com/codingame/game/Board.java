@@ -107,7 +107,7 @@ public class Board {
         grid.put(to, origin);
     }
     
-    public PieceType getMissingPieceType(int player) {
+    public List<PieceType> getMissingPieceTypes(int player) {
         boolean hasTott = false;
         boolean hasTzarra = false;
         boolean hasTzaar = false;
@@ -120,10 +120,12 @@ public class Board {
             }
         }
         
-        if (!hasTott) return PieceType.TOTT;
-        if (!hasTzarra) return PieceType.TZARRA;
-        if (!hasTzaar) return PieceType.TZAAR;
-        return null;
+        List<PieceType> missing = new ArrayList<>();
+        if (!hasTzaar) missing.add(PieceType.TZAAR);
+        if (!hasTzarra) missing.add(PieceType.TZARRA);
+        if (!hasTott) missing.add(PieceType.TOTT);
+        
+        return missing;
     }
     
     public boolean canMakeCapture(int player) {

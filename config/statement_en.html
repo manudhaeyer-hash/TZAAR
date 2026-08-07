@@ -5,7 +5,7 @@
       <span>The Game</span>
     </h2>
     <div class="statement-game-content">
-      This game is based on the board game <a href="https://en.wikipedia.org/wiki/TZAAR" target="_blank">TZAAR</a>, invented by Kris Burm. There are no deviations from the official rules, except for the colors of the pieces (Red and Blue instead of White and Black).
+      This game is based on the board game <a href="https://en.wikipedia.org/wiki/<i>tzaar</i>" target="_blank"><i>tzaar</i></a>, invented by Kris Burm. There are no deviations from the official rules, except for the colors of the pieces (Red and Blue instead of White and Black).
     </div>
   </div>
 
@@ -15,7 +15,7 @@
       <span>Goal</span>
     </h2>
     <div class="statement-goal-content">
-      Win the game by eliminating all of your opponent's pieces of a specific type (TZAAR, TZARRA, or TOTT) or by making them unable to perform a valid capture on their turn.
+      Win the game by eliminating all of your opponent's pieces of a specific type (<i>tzaar</i>, <i>tzarra</i>, or <i>tott</i>) or by making them unable to perform a valid capture on their turn.
     </div>
   </div>
 
@@ -26,12 +26,12 @@
     </h2>
     <div>
       <div class="statement-rules-content">
-        TZAAR is played on a hexagonal board with <const>60</const> spaces (4 rings around an empty center).<br>
-        Each player controls <const>30</const> pieces: <const>6</const> TZAARs, <const>9</const> TZARRAs, and <const>15</const> TOTTs.<br>
+        <i>tzaar</i> is played on a hexagonal board with <const>60</const> spaces (there is no playable space in the center).<br>
+        Each player controls <const>30</const> pieces: <const>6</const> <i>tzaar</i>s, <const>9</const> <i>tzarra</i>s, and <const>15</const> <i>tott</i>s.<br>
         The game uses a <b>fixed</b> starting arrangement. Player <const>0</const> (Red) plays first.<br>
         <br>
         <b>Coordinates:</b><br>
-        The board uses an <var>(X, Y)</var> coordinate system from <const>0</const> to <const>8</const>. The <var>X</var> axis represents the diagonal from top-left to bottom-right, and the <var>Y</var> axis represents the horizontal rows from top to bottom. The leftmost space on the board is at (<const>0</const>, <const>4</const>), and the topmost spaces are on the row <var>Y</var> = <const>0</const> from <var>X</var> = <const>4</const> to <var>X</var> = <const>8</const>.<br>
+        The board uses an (<var>X</var>, <var>Y</var>) coordinate system with both coordinates ranging from <const>0</const> to <const>8</const>. <var>X</var>-coordinates increase from bottom-left to top-right, and <var>Y</var>-coordinates increase from top to bottom. For easy reference, the coordinates of every space are shown in the initial board setup diagram below.<br>
         <br>
         <details><summary>Show initial board setup</summary>
         <div style="text-align: center;">
@@ -45,12 +45,12 @@
           <li><b>Phase 1:</b> You <b>must capture</b> an opponent's piece. If you cannot, you lose.</li>
           <li><b>Phase 2:</b> You can either <b>capture</b> another opponent's piece, <b>reinforce</b> one of your own pieces, or <b>pass</b> by outputting <action>WAIT</action>.</li>
         </ul>
-        <i>Note: At the very beginning of the game, Player <const>0</const> (Red) only plays once (they only play <b>Phase 1</b>).</i><br>
+        <i>Note: On the first turn of the game, Player <const>0</const> (Red) plays Phase 1 only and skips Phase 2.</i><br>
         <br>
         <b>Movement & Capture:</b><br>
-        Pieces move in straight lines across any number of empty spaces. They cannot jump over other pieces and cannot land on an empty space.<br>
-        When <b>capturing</b>, your stack must be of <b>equal or greater height</b> than the opponent's stack. The opponent's stack is then removed, and yours replaces it.<br>
-        When <b>reinforcing</b>, you move your stack onto another of your own stacks. The heights are added, and the top piece determines the type of the new stack.<br>
+        Pieces move in a straight line across any number of empty spaces. Pieces cannot move across the center of the board. They cannot jump over other pieces and cannot land on an empty space.<br>
+        When <b>capturing</b>, your stack must be of <b>equal or greater height</b> than the opponent's stack. The captured stack is removed, and the attacking stack moves onto the space.<br>
+        When <b>reinforcing</b>, you move your stack onto another of your own stacks. The heights are added, and the top piece determines the type of the new stack. If this removes your last remaining piece of a type from the board, you immediately lose the game.<br>
       </div>
     </div>
   </div>
@@ -61,9 +61,8 @@
           <div class="title">Victory Conditions</div>
           <div class="text">
               <ul class="statement-bottom-line-sm">
-                  <li>You capture your opponent's last TZAAR, TZARRA, or TOTT.</li>
-                  <li>Your opponent cannot make a valid capture during <b>Phase 1</b>.</li>
-              </ul>
+                  <li>You capture your opponent's last <i>tzaar</i>, <i>tzarra</i>, or <i>tott</i>.</li>
+                                </ul>
           </div>
       </div>
   </div>
@@ -73,7 +72,7 @@
           <div class="title">Defeat Conditions</div>
           <div class="text">
               <ul class="statement-bottom-line-sm">
-                  <li>You lose all pieces of one type (TZAAR, TZARRA, or TOTT).</li>
+                  <li>You lose all pieces of one type (<i>tzaar</i>, <i>tzarra</i>, or <i>tott</i>).</li>
                   <li>You cannot make a valid capture during <b>Phase 1</b>.</li>
                   <li>Your program does not provide a valid command in the given time limit.</li>
               </ul>
@@ -107,14 +106,14 @@
       <div class="text">
         <span class="statement-lineno">Line 1:</span> An integer <var>actionPhase</var> (<const>1</const> or <const>2</const>).<br>
         <br>
-        <span class="statement-lineno">Line 2:</span> An integer <var>validPieceCount</var> the number of stacks on the board.<br>
+        <span class="statement-lineno">Line 2:</span> An integer <var>pieceCount</var> the number of stacks on the board.<br>
         <br>
-        <span class="statement-lineno">Next <var>validPieceCount</var> lines:</span> <const>5</const> space-separated integers: <var>x</var> <var>y</var> <var>owner</var> <var>type</var> <var>height</var>.<br>
+        <span class="statement-lineno">Next <var>pieceCount</var> lines:</span> <const>5</const> space-separated integers: <var>x</var> <var>y</var> <var>owner</var> <var>type</var> <var>height</var>.<br>
         <ul class="statement-bottom-line-sm">
-          <li><var>x</var>: X coordinate of the space</li>
-          <li><var>y</var>: Y coordinate of the space</li>
+          <li><var>x</var>: X coordinate of the stack</li>
+          <li><var>y</var>: Y coordinate of the stack</li>
           <li><var>owner</var>: owner of the stack (<const>0</const> or <const>1</const>)</li>
-          <li><var>type</var>: type of the top piece of the stack (<const>0</const> = TOTT, <const>1</const> = TZARRA, <const>2</const> = TZAAR)</li>
+          <li><var>type</var>: type of the top piece of the stack (<const>0</const> = <i>tott</i>, <const>1</const> = <i>tzarra</i>, <const>2</const> = <i>tzaar</i>)</li>
           <li><var>height</var>: height of the stack</li>
         </ul>
       </div>
@@ -122,7 +121,7 @@
     <div class="blk">
       <div class="title">Output</div>
       <div class="text">
-        A single line for your action: <action>MOVE x1 y1 x2 y2</action> to move from (x1, y1) to (x2, y2), or <action>WAIT</action> (only valid in <b>Phase 2</b>).
+        A single line for your action: <action>MOVE <var>x1</var> <var>y1</var> <var>x2</var> <var>y2</var></action> to move from (<var>x1</var>, <var>y1</var>) to (<var>x2</var>, <var>y2</var>), or <action>WAIT</action> (only valid in <b>Phase 2</b>).
       </div>
     </div>
     <div class="blk">

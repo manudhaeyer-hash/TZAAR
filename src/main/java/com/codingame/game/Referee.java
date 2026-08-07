@@ -68,7 +68,7 @@ public class Referee extends AbstractReferee {
         actionStr = actionStr.trim().toUpperCase();
         if (actionStr.equals("WAIT") || actionStr.equals("PASS")) {
             if (actionPhase == 1) {
-                throw new Exception("First action of the turn must be a capture.");
+                throw new Exception("Phase 1 requires a capture.");
             }
             gameManager.addToGameSummary(player.getNicknameToken() + " passed.");
             viewer.addAction(player.getIndex(), "WAIT");
@@ -89,7 +89,7 @@ public class Referee extends AbstractReferee {
             boolean isCapture = (target.owner != player.getIndex());
             
             if (actionPhase == 1 && !isCapture) {
-                throw new Exception("First action of the turn must be a capture.");
+                throw new Exception("Phase 1 requires a capture.");
             }
             
             board.executeMove(from, to);
@@ -105,21 +105,27 @@ public class Referee extends AbstractReferee {
     public void gameTurn(int turn) {
         Player player = gameManager.getPlayer(currentPlayerIndex);
         
-        PieceType missing = board.getMissingPieceType(player.getIndex());
-        if (missing != null) {
-            player.message = String.format("Lost all %s pieces", missing.name());
+        List<PieceType> missing = board.getMissingPieceTypes(player.getIndex());
+        if (!missing.isEmpty()) {
+            StringBuilder missingNames = new StringBuilder();
+            for (int i = 0; i < missing.size(); i++) {
+                missingNames.append(missing.get(i).name().toLowerCase());
+                if (i < missing.size() - 2) missingNames.append(", ");
+                else if (i == missing.size() - 2) missingNames.append(" and ");
+            }
+            player.message = String.format("Lost all %s pieces", missingNames.toString());
             player.deactivate(player.message);
             player.setScore(-1);
-            gameManager.addToGameSummary(player.getNicknameToken() + String.format(" lost (missing %s pieces).", missing.name()));
+            gameManager.addToGameSummary(player.getNicknameToken() + String.format(" lost (no remaining %s pieces).", missingNames.toString()));
             gameManager.endGame();
             return;
         }
         
         if (actionPhase == 1 && !board.canMakeCapture(player.getIndex())) {
-            player.message = "Cannot make any capture";
+            player.message = "No valid capture available";
             player.deactivate(player.message);
             player.setScore(-1);
-            gameManager.addToGameSummary(player.getNicknameToken() + " lost (cannot capture).");
+            gameManager.addToGameSummary(player.getNicknameToken() + " lost (no valid capture available).");
             gameManager.endGame();
             return;
         }
@@ -153,7 +159,7 @@ public class Referee extends AbstractReferee {
             player.setScore(-1);
             gameManager.addToGameSummary(player.getNicknameToken() + " sent an invalid action:");
             gameManager.addToGameSummary(e.getMessage());
-            gameManager.addToGameSummary(Player.getExpectedOutputFormat());
+            gameManager.addToGameSummary(Player.getExpectedOutputFormat(actionPhase));
             gameManager.endGame();
             return;
         }

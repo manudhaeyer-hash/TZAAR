@@ -1,0 +1,54 @@
+### Compilation, test local et export CodinGame (PowerShell) ###
+### Toutes les commandes se lancent depuis la racine du projet. ###
+
+## 0. Prérequis
+- JDK 17+ (le SDK >= 4.5.0 est compilé pour Java 17).
+  Si Maven utilise un autre JDK :  $env:JAVA_HOME = "C:\...\jdk-XX"   (dossier SANS \bin)
+- Maven dans le PATH.
+
+## 1. Générer les statements (si modifiés)
+> javac UpdateStatements.java ; java UpdateStatements
+> javac -encoding UTF-8 UpdateStatementsFR.java ; java UpdateStatementsFR
+
+## 2. Compiler le Boss (une fois, ou après modification)
+> javac config/Boss.java
+PIÈGE : le fichier s'appelle Boss.java mais la CLASSE dedans s'appelle Player
+(CodinGame compile le boss comme du code joueur IDE). javac produit donc
+config/Player.class et le lanceur local exécute "java -cp config Player".
+
+## 3. Compiler le projet et lancer le serveur local
+> mvn clean install
+> mvn exec:exec -D"exec.executable"="java" -D"exec.classpathScope"="test" -D"exec.args"="--add-opens java.base/java.lang=ALL-UNNAMED -cp %classpath Main"
+
+Puis ouvrir :  http://localhost:8888/test.html
+
+PIÈGES :
+- N'utilisez PAS "mvn exec:java" : il exécute Main dans la JVM de Maven et le
+  Renderer du SDK ne trouve pas les ressources du viewer -> page 404.
+- Le --add-opens est requis avec un JDK 16+ (Guice du SDK fait de la réflexion
+  profonde). Sans lui : InaccessibleObjectException.
+- Le dossier src/main/resources/view/assets/ doit EXISTER (même vide), sinon
+  FileNotFoundException sur demo.js au premier lancement.
+- Attendez la ligne "http://localhost:8888/test.html" dans la console avant
+  d'ouvrir le navigateur ; si 404/403 : tuez les anciens java
+  (Get-Process java | Stop-Process -Force) et purgez
+  $env:LOCALAPPDATA\Temp\codingame, puis relancez.
+- Le toast "Could not find image: undefined" au chargement de la page locale
+  est bénin (le module EndScreen s'initialise avant la dernière frame).
+
+## 4. Tester différentes configs
+Éditez src/test/java/Main.java : setLeagueLevel(n), setSeed(...), addAgent(...).
+
+## 5. Exporter vers CodinGame
+Depuis la page localhost : bouton Export, puis importez le zip dans votre
+contribution sur codingame.com.
+PIÈGE : si l'export échoue avec "ClassNotFoundException: Exporter", le runner
+est en <scope>test</scope> dans le pom : retirez le scope.
+
+## 6. Debug sur la plateforme
+- "The Referee failed to provide output in 10000ms" : referee planté/bloqué ->
+  vérifiez la version du SDK (protocole) et regardez l'onglet Referee.
+- "Boss X timed out" dès le tour 1 : le boss ne compile pas -> 99% du temps un
+  problème de nom de classe (doit être Player, voir §2).
+- Test qui isole : faites jouer le code par défaut (généré du stub) contre
+  lui-même. S'il fonctionne, le referee est sain et le souci vient du boss.

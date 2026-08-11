@@ -62,7 +62,11 @@ public class Referee extends AbstractReferee {
      *  pas a etre rappele derriere (coordonnee hors plateau, coup illegal...). */
     @SuppressWarnings("serial")
     private static class RuleException extends Exception {
-        RuleException(String m) { super(m); }
+        String viewerMessage;
+        RuleException(String viewerMessage, String consoleMessage) { 
+            super(consoleMessage);
+            this.viewerMessage = viewerMessage;
+        }
     }
 
     /** Exception qui, elle, justifie de rappeler le format attendu. */
@@ -102,7 +106,7 @@ public class Referee extends AbstractReferee {
                 throw new FormatException("WAIT takes no parameter.");
             }
             if (actionPhase == 1) {
-                throw new RuleException("Phase 1 requires a capture, WAIT is not allowed.");
+                throw new RuleException("Capture required in Phase 1.", "Phase 1 requires a capture, WAIT is not allowed.");
             }
             gameManager.addToGameSummary(player.getNicknameToken() + " passed.");
             viewer.addAction(player.getIndex(), "WAIT");
@@ -126,44 +130,44 @@ public class Referee extends AbstractReferee {
         Hex to = parseHex(parts, 3);
 
         if (!board.isOnBoard(from)) {
-            throw new RuleException("Source " + toXY(from) + " is not a space on the board.");
+            throw new RuleException("Source not on board.", "Source " + toXY(from) + " is not a space on the board.");
         }
         if (!board.isOnBoard(to)) {
-            throw new RuleException("Destination " + toXY(to) + " is not a space on the board.");
+            throw new RuleException("Destination not on board.", "Destination " + toXY(to) + " is not a space on the board.");
         }
         if (from.equals(to)) {
-            throw new RuleException("Source and destination are the same space " + toXY(from) + ".");
+            throw new RuleException("Source and destination are same.", "Source and destination are the same space " + toXY(from) + ".");
         }
 
         Stack origin = board.grid.get(from);
         Stack target = board.grid.get(to);
         if (origin == null) {
-            throw new RuleException("There is no stack on " + toXY(from) + ".");
+            throw new RuleException("Source is empty.", "There is no stack on " + toXY(from) + ".");
         }
         if (origin.owner != player.getIndex()) {
-            throw new RuleException("The stack on " + toXY(from) + " belongs to your opponent.");
+            throw new RuleException("Source belongs to opponent.", "The stack on " + toXY(from) + " belongs to your opponent.");
         }
         if (target == null) {
-            throw new RuleException("Destination " + toXY(to) + " is empty: a stack must land on another stack.");
+            throw new RuleException("Destination is empty.", "Destination " + toXY(to) + " is empty: a stack must land on another stack.");
         }
         if (!from.isAligned(to)) {
-            throw new RuleException(String.format(
+            throw new RuleException("Not on same line.", String.format(
                 "%s and %s are not on the same line.", toXY(from), toXY(to)));
         }
         if (!board.isPathClear(from, to)) {
-            throw new RuleException(String.format(
+            throw new RuleException("Path is blocked.", String.format(
                 "The line from %s to %s is blocked (a stack, or the empty center, is in the way).",
                 toXY(from), toXY(to)));
         }
 
         boolean isCapture = (target.owner != player.getIndex());
         if (isCapture && origin.height < target.height) {
-            throw new RuleException(String.format(
+            throw new RuleException("Target is too high.", String.format(
                 "Cannot capture: your stack on %s has height %d, the target on %s has height %d.",
                 toXY(from), origin.height, toXY(to), target.height));
         }
         if (actionPhase == 1 && !isCapture) {
-            throw new RuleException("Phase 1 requires a capture, not a reinforcement.");
+            throw new RuleException("Capture required in Phase 1.", "Phase 1 requires a capture, not a reinforcement.");
         }
 
         int heightBefore = origin.height;
@@ -293,6 +297,10 @@ public class Referee extends AbstractReferee {
             gameManager.addToGameSummary(player.getNicknameToken() + " sent an invalid action: " + e.getMessage());
             gameManager.addToGameSummary(Player.getExpectedOutputFormat(actionPhase));
             gameManager.endGame();
+            return;
+        } catch (RuleException e) {
+            lose(player, e.viewerMessage,
+                 player.getNicknameToken() + " played an illegal move: " + e.getMessage());
             return;
         } catch (Exception e) {
             // Coup syntaxiquement correct mais interdit par les regles : le

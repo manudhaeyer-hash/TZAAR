@@ -4,3 +4,10 @@ out/
 .idea/
 *.iml
 .vscode/
+COMPILE_RUN_LOCAL.txt
+NEW_GAME_CHECKLIST.md
+brain/
+scratch/
+solver_cpp/
+tools_assets/
+cover2.png

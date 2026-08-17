@@ -198,11 +198,11 @@ public class Referee extends AbstractReferee {
         return sb.toString();
     }
 
-    private void lose(Player player, String shortMessage, String summary) {
-        player.message = shortMessage;
-        player.deactivate(summary);
+    private void lose(Player player, String endScreenMessage, String tooltipMessage, String consoleMessage) {
+        player.message = endScreenMessage;
+        player.deactivate(tooltipMessage);
         player.setScore(-1);
-        gameManager.addToGameSummary(summary);
+        gameManager.addToGameSummary(consoleMessage);
         gameManager.endGame();
     }
 
@@ -245,11 +245,13 @@ public class Referee extends AbstractReferee {
         }
         if (!m0.isEmpty()) {
             lose(p0, "Lost all " + describeMissing(m0) + " pieces",
+                 "Lost all " + describeMissing(m0) + " pieces",
                  p0.getNicknameToken() + " lost (no remaining " + describeMissing(m0) + " pieces).");
             return true;
         }
         if (!m1.isEmpty()) {
             lose(p1, "Lost all " + describeMissing(m1) + " pieces",
+                 "Lost all " + describeMissing(m1) + " pieces",
                  p1.getNicknameToken() + " lost (no remaining " + describeMissing(m1) + " pieces).");
             return true;
         }
@@ -264,6 +266,7 @@ public class Referee extends AbstractReferee {
         // reste ici, contrairement a l'elimination par type.
         if (actionPhase == 1 && !board.canMakeCapture(player.getIndex())) {
             lose(player, "No valid capture available",
+                 "No valid capture available",
                  player.getNicknameToken() + " lost (no valid capture available).");
             return;
         }
@@ -285,7 +288,7 @@ public class Referee extends AbstractReferee {
             }
 
         } catch (TimeoutException e) {
-            lose(player, "Timeout!", player.getNicknameToken() + " timed out.");
+            lose(player, "Timeout!", "Timeout!", player.getNicknameToken() + " timed out.");
             return;
         } catch (FormatException e) {
             // Seules les erreurs de FORMAT justifient de rappeler la syntaxe.
@@ -297,11 +300,11 @@ public class Referee extends AbstractReferee {
             gameManager.endGame();
             return;
         } catch (RuleException e) {
-            lose(player, "Invalid action",
+            lose(player, "Illegal move", "Invalid action",
                  player.getNicknameToken() + " played an illegal action: " + e.getMessage());
             return;
         } catch (Exception e) {
-            lose(player, "Invalid action",
+            lose(player, "Illegal move", "Invalid action",
                  player.getNicknameToken() + " played an illegal action: " + e.getMessage());
             return;
         }

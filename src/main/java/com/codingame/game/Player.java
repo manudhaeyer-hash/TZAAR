@@ -12,8 +12,8 @@ public class Player extends AbstractMultiplayerPlayer {
 
     public static String getExpectedOutputFormat(int actionPhase) {
         if (actionPhase == 1) {
-            return "Expected output format: 'MOVE q1 r1 q2 r2'";
+            return "Expected output format: 'MOVE x1 y1 x2 y2'";
         }
-        return "Expected output format: 'MOVE q1 r1 q2 r2' or 'WAIT'";
+        return "Expected output format: 'MOVE x1 y1 x2 y2' or 'WAIT'";
     }
 }

@@ -2,5 +2,5 @@ read myId:int
 gameloop
 read actionPhase:int
 read pieceCount:int
-loop pieceCount read q:int r:int owner:int type:int height:int
+loop pieceCount read x:int y:int owner:int type:int height:int
 write WAIT

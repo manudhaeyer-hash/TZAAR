@@ -46,6 +46,7 @@
           <li><b>Phase 2:</b> You can either <b>capture</b> another opponent's piece, <b>reinforce</b> one of your own pieces, or <b>pass</b> by outputting <action>WAIT</action>.</li>
         </ul>
         <i>Note: On the first turn of the game, Player <const>0</const> (Red) plays Phase 1 only and skips Phase 2.</i><br>
+        <i>Victory and defeat are checked <b>immediately after each phase</b>: as soon as a player has no pieces left of one type, the game ends at once, even in the middle of a turn.</i><br>
         <br>
         <b>Movement & Capture:</b><br>
         Pieces move in a straight line across any number of empty spaces. Pieces cannot move across the center of the board. They cannot jump over other pieces and cannot land on an empty space.<br>
@@ -119,7 +120,7 @@
       </div>
     </div>
     <div class="blk">
-      <div class="title">Output</div>
+      <div class="title">Output for one game turn</div>
       <div class="text">
         A single line for your action: <action>MOVE</action> <var>x1</var> <var>y1</var> <var>x2</var> <var>y2</var> to move from (<var>x1</var>, <var>y1</var>) to (<var>x2</var>, <var>y2</var>), or <action>WAIT</action> (only valid in <b>Phase 2</b>).
       </div>

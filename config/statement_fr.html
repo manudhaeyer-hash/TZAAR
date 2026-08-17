@@ -46,6 +46,7 @@
           <li><b>Phase 2 :</b> Vous <b>pouvez capturer</b> une autre pièce, <b>renforcer</b> une de vos piles, ou <b>passer</b> en renvoyant <action>WAIT</action>.</li>
         </ul>
         <i>Note : Au tout début de la partie, le joueur <const>0</const> (rouge) ne joue qu'une seule fois (il joue uniquement la <b>Phase 1</b>).</i><br>
+        <i>La victoire et la défaite sont vérifiées <b>immédiatement après chaque phase</b> : dès qu'un joueur n'a plus aucune pièce d'un type, la partie s'arrête aussitôt, y compris au milieu d'un tour.</i><br>
         <br>
         <b>Mouvement et Capture :</b><br>
         Les pièces se déplacent en ligne droite au-dessus de cases vides. Elles ne peuvent pas sauter par-dessus une autre pièce ni atterrir sur une case vide.<br>
@@ -120,7 +121,7 @@
       </div>
     </div>
     <div class="blk">
-      <div class="title">Sortie</div>
+      <div class="title">Sortie pour un tour de jeu</div>
       <div class="text">
         Une ligne unique pour votre action : <action>MOVE</action> <var>x1</var> <var>y1</var> <var>x2</var> <var>y2</var> pour vous déplacer de (<var>x1</var>, <var>y1</var>) à (<var>x2</var>, <var>y2</var>), ou <action>WAIT</action> (uniquement valide durant la <b>Phase 2</b>).
       </div>

@@ -57,6 +57,14 @@ public class Board {
         }
     }
     
+    /** Le plateau est un hexagone de rayon 4 PRIVE de son centre : 60 cases.
+     *  Sert a distinguer "coordonnee hors plateau" de "case vide", deux erreurs
+     *  que le joueur n'a aucune raison de voir confondues. */
+    public boolean isOnBoard(Hex h) {
+        if (h.q == 0 && h.r == 0) return false;
+        return Math.abs(h.q) <= 4 && Math.abs(h.r) <= 4 && Math.abs(h.s) <= 4;
+    }
+
     public boolean isPathClear(Hex a, Hex b) {
         if (!a.isAligned(b)) return false;
         

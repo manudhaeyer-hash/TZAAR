@@ -179,7 +179,7 @@ public class Referee extends AbstractReferee {
                 toXY(from), toXY(to), target.type.name().toLowerCase(), target.height));
         } else {
             gameManager.addToGameSummary(String.format(
-                "%s moved a %s stack from %s to %s and reinforced a %s stack, making a %s stack of height %d.",
+                "%s moved a %s stack (height %d) from %s to %s and reinforced a %s stack (height %d), making a %s stack of height %d.",
                 player.getNicknameToken(), origin.type.name().toLowerCase(), heightBefore,
                 toXY(from), toXY(to), target.type.name().toLowerCase(), target.height,
                 origin.type.name().toLowerCase(), heightBefore + target.height));
@@ -300,11 +300,11 @@ public class Referee extends AbstractReferee {
             gameManager.endGame();
             return;
         } catch (RuleException e) {
-            lose(player, "Illegal move", "Invalid action",
+            lose(player, "Illegal action", "Illegal action",
                  player.getNicknameToken() + " played an illegal action: " + e.getMessage());
             return;
         } catch (Exception e) {
-            lose(player, "Illegal move", "Invalid action",
+            lose(player, "Illegal action", "Illegal action",
                  player.getNicknameToken() + " played an illegal action: " + e.getMessage());
             return;
         }

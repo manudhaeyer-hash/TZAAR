@@ -89,13 +89,13 @@ public class Referee extends AbstractReferee {
         // comme une coordonnee parfaitement legale.
         if (token.length() > MAX_COORDINATE_TOKEN_LENGTH) {
             throw new FormatException(String.format(
-                "Input for %s is too long (%d characters, max %d).",
+                "Value for %s is too long (%d characters, max %d).",
                 name, token.length(), MAX_COORDINATE_TOKEN_LENGTH));
         }
         try {
             return Integer.parseInt(token);
         } catch (NumberFormatException e) {
-            throw new FormatException(String.format("Non-integer input for %s: '%s'", name, token));
+            throw new FormatException(String.format("Non-integer value for %s: '%s'", name, token));
         }
     }
 

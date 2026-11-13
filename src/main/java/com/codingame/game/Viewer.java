@@ -196,7 +196,16 @@ public class Viewer {
         pScores[1].setText("Stacks: " + p1Pieces);
     }
     
+    /** Le viewer ne doit JAMAIS afficher de texte non borne venant du joueur :
+     *  le SDK plafonne le volume de donnees envoye au viewer et plante le
+     *  referee au-dela. Le Referee filtre deja en amont ; cette troncature est
+     *  une defense en profondeur, valable pour tout futur chemin vers l'affichage. */
+    private static final int MAX_DISPLAYED_ACTION_LENGTH = 32;
+
     public void addAction(int playerIndex, String action) {
+        if (action.length() > MAX_DISPLAYED_ACTION_LENGTH) {
+            action = action.substring(0, MAX_DISPLAYED_ACTION_LENGTH) + "...";
+        }
         List<String> list = playerIndex == 0 ? actions0 : actions1;
         list.add(action);
         if (list.size() > 4) list.remove(0);

@@ -73,7 +73,25 @@ public class Referee extends AbstractReferee {
         FormatException(String m) { super(m); }
     }
 
+    /** Longueur maximale d'une ligne de sortie acceptee. La plus longue action
+     *  legale est "MOVE 8 8 8 8" (13 caracteres) ; 32 laisse de la marge pour
+     *  des espaces superflus sans ouvrir la porte a une sortie demesuree. */
+    private static final int MAX_ACTION_LENGTH = 32;
+
+    /** Longueur maximale d'un token de coordonnee. Les coordonnees valides sont
+     *  dans 0..8, donc un seul chiffre ; 3 tolere un signe et un zero en tete. */
+    private static final int MAX_COORDINATE_TOKEN_LENGTH = 3;
+
     private int parseCoordinate(String token, String name) throws FormatException {
+        // Integer.parseInt n'impose AUCUNE limite de longueur et ne deborde pas
+        // sur les zeros en tete : "000...04" vaut 4 pour lui. Sans ce garde-fou,
+        // un token de plusieurs milliers de caracteres traversait la validation
+        // comme une coordonnee parfaitement legale.
+        if (token.length() > MAX_COORDINATE_TOKEN_LENGTH) {
+            throw new FormatException(String.format(
+                "Input for %s is too long (%d characters, max %d).",
+                name, token.length(), MAX_COORDINATE_TOKEN_LENGTH));
+        }
         try {
             return Integer.parseInt(token);
         } catch (NumberFormatException e) {
@@ -97,6 +115,19 @@ public class Referee extends AbstractReferee {
     
     private Hex[] handleAction(Player player, String actionStr) throws Exception {
         actionStr = actionStr.trim().toUpperCase();
+
+        // Barriere posee AVANT tout parsing : la sortie du joueur finit dans le
+        // resume et dans le viewer, or le SDK plafonne le volume envoye au
+        // viewer (1 Mo cumule) et leve alors une RuntimeException depuis
+        // dumpView(), donc HORS du try/catch de gameTurn : c'est le referee qui
+        // tombe, pas le joueur qui perd. Une ligne demesuree doit etre rejetee
+        // ici, comme une simple erreur de format.
+        if (actionStr.length() > MAX_ACTION_LENGTH) {
+            throw new FormatException(String.format(
+                "Output line is too long (%d characters, max %d).",
+                actionStr.length(), MAX_ACTION_LENGTH));
+        }
+
         String[] parts = actionStr.split("\\s+");
 
         if (parts[0].equals("WAIT")) {
